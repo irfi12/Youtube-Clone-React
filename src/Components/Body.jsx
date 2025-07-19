@@ -4,7 +4,7 @@ import Main_Container from '../../src/Components/Main_Container';
 
 const Body = () => {
   return (
-    <div className='flex'>
+    <div className='flex h-screen bg-black'>
       <Sidebar/>
       <Main_Container/>
     </div>
