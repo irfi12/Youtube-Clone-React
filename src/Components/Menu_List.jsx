@@ -5,24 +5,28 @@ import { ChevronRight } from "lucide-react";
 const Menu_List = ({ items }) => {
   const [appear, setappear] = useState(false);
 
-  // Example: split the list into two sections
-  const firstItems = items.slice(0, 3); // First 3 items
-  const secondItems = items.slice(3,10); // Remaining items
-  const thirdItems = items.slice(8); // Remaining items
+  // grouping of items
+  const homeSection = items.slice(0, 3);                   // Home sy Subscription tak
+  const yoursection = items.slice(3, 10);                  // History sy Clips tak
+  const subscriptionsection = items.slice(10, 12);         // Irfan, Irfan, Clips
+  const exploreSection = items.slice(12, 17);              // clips sy explore tak
+  const youtubesection = items.slice(17, 21);              // Feedback  Help
+  const moreSection = items.slice(21, 25);                 // setting sy feedbad tak
 
   return (
     <motion.div
       initial={{ x: 6, opacity: 0.7 }}
-      animate={{ opacity: 1 }}
+      animate={{ x: 10, opacity: 4 }}
       transition={{ duration: 0.9 }}
       onMouseEnter={() => setappear(true)}
       onMouseLeave={() => setappear(false)}
-      className={`w-60 h-[80vh] p-4 bg-transparent ${
+      className={`w-65 h-[80vh] p-4 bg-transparent ${
         appear ? "overflow-y-auto" : "overflow-hidden"
       }`}
     >
       <ul className="flex flex-col space-y-2">
-        {firstItems.map((item, index) => (
+        {/* Section 1: Home Section */}
+        {homeSection.map((item, index) => (
           <li
             key={index}
             className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
@@ -36,15 +40,15 @@ const Menu_List = ({ items }) => {
           </li>
         ))}
 
-        {/* Divider */}
+        {/* Divider: Library */}
         <hr className="border-[#27272a] my-3" />
-        <span className="text-xl text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer gap-2 flex items-center">
+        <span className="text-md text-white px-4 py-2 font-semibold flex items-center hover:bg-[#27272a] rounded-xl cursor-pointer gap-2">
           You <ChevronRight size={20} />
         </span>
 
-        {secondItems.map((item, index) => (
+        {yoursection.map((item, index) => (
           <li
-            key={index + firstItems.length}
+            key={index + 3}
             className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
           >
             <img
@@ -55,15 +59,16 @@ const Menu_List = ({ items }) => {
             <span>{item.name}</span>
           </li>
         ))}
-        {/* Divider */}
+
+        {/* Divider between items */}
         <hr className="border-[#27272a] my-3" />
-        <span className="text-xl text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer gap-2 flex items-center">
-          Subscriptions
+        <span className="text-md text-white px-4 py-2 font-semibold flex items-center hover:bg-[#27272a] rounded-xl cursor-pointer gap-2">
+          Subscription
         </span>
 
-        {thirdItems.map((item, index) => (
+        {subscriptionsection.map((item, index) => (
           <li
-            key={index + firstItems.length}
+            key={index + 9}
             className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
           >
             <img
@@ -74,6 +79,69 @@ const Menu_List = ({ items }) => {
             <span>{item.name}</span>
           </li>
         ))}
+
+        {/* Divider: Support */}
+        <hr className="border-[#27272a] my-3" />
+        <span className="text-md text-white px-4 py-2 font-semibold">
+          Explore
+        </span>
+
+        {exploreSection.map((item, index) => (
+          <li
+            key={index + 12}
+            className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
+          >
+            <img
+              src={item.logo}
+              alt={`${item.name}-icon`}
+              className="w-6 h-6"
+            />
+            <span>{item.name}</span>
+          </li>
+        ))}
+        {/* Divider: More from YouTube */}
+        <hr className="border-[#27272a] my-3" />
+        <span className="text-md text-white px-4 py-2 font-semibold hover:bg-[#27272a] rounded-xl cursor-pointer">
+          More from YouTube
+        </span>
+
+        {youtubesection.map((item, index) => (
+          <li
+            key={index + 16}
+            className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
+          >
+            <img
+              src={item.logo}
+              alt={`${item.name}-icon`}
+              className="w-6 h-6"
+            />
+            <span>{item.name}</span>
+          </li>
+        ))}
+
+        {/* Divider*/}
+        <hr className="border-[#27272a] my-3" />
+        {moreSection.map((item, index) => (
+          <li
+            key={index + 25}
+            className="flex items-center gap-4 text-white hover:bg-[#27272a] rounded-xl px-4 py-3 cursor-pointer"
+          >
+            <img
+              src={item.logo}
+              alt={`${item.name}-icon`}
+              className="w-6 h-6"
+            />
+            <span>{item.name}</span>
+          </li>
+        ))}
+        <hr className="border-[#27272a] my-3" />
+        <div>
+          <span className="text-sm text-[#27272a] font-bold">
+            AboutPressCopyrightContact usCreatorsAdvertiseDevelopers
+            TermsPrivacyPolicy & SafetyHow YouTube worksTest new features <br /> © 2025
+            Google LLC
+          </span>
+        </div>
       </ul>
     </motion.div>
   );

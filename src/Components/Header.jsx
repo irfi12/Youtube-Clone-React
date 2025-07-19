@@ -7,22 +7,57 @@ import { toggleMenu } from "../utils/appSlice";
 import home from '../assets/home.png';
 import subscription from '../assets/subscription.png';
 import short_videos from '../assets/short_videos.png';
+import courses from '../assets/courses.png';
+import cut from '../assets/cut.png';
+import feedback from '../assets/feedback.png';
+import gaming from '../assets/gaming.png';
+import help from '../assets/help.png';
+import history from '../assets/history.png';
+import like from '../assets/like.png';
+import music from '../assets/music.png';
+import newspaper from '../assets/newspaper.png';
+import report from '../assets/report.png';
+import trending from '../assets/trending.png';
+import trophy from '../assets/trophy.png';
+import videos from '../assets/videos.png';
+import watch_later from '../assets/watch_later.png';
+import setting from '../assets/setting.png';
+import app from '../assets/app.png';
+import youtube_studio from '../assets/youtube-studio.png';
+import youtube_kids from '../assets/youtube-kids.png';
+import youtube_premimum from '../assets/youtube_premimum.png';
 import Menu_List from "./Menu_List";
 
 // Basically its menu items in when we toggle it on or off
 const menuItems = [
   { logo: home, name: "Home" },
   { logo: short_videos, name: "Short" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
-  { logo: subscription, name: "Subscriptions" },
+  { logo: subscription, name: "Subscription" },
+  { logo: history, name: "History" },
+  { logo: music, name: "Playlists" },
+  { logo: videos, name: "Your videos" },
+  { logo: courses, name: "Your courses" },
+  { logo: watch_later, name: "Watch later" },
+  { logo: like, name: "Liked videos" },
+  { logo: cut, name: "Your clips" },
+  { logo: my_image, name: "irfan" },
+  { logo: my_image, name: "irfan" },
+  { logo: trending, name: "Trending" },
+  { logo: music, name: "Musics" },
+  { logo: gaming, name: "Gaming" },
+  { logo: newspaper, name: "News" },
+  { logo: trophy, name: "Sports" },
+  { logo: youtube_premimum, name: "YouTube Premimum" },
+  { logo: youtube_studio, name: "YouTube Studio" },
+  { logo: app, name: "YouTube Music" },
+  { logo: youtube_kids, name: "YouTube Kids" },
+  { logo: setting, name: "Setting" },
+  { logo: report, name: "Report History" },
+  { logo: help, name: "help" },
+  { logo: feedback, name: "Send feedback" },
+  
+  
+ 
  
 ];
 
@@ -49,7 +84,7 @@ const Header = () => {
 
         {/*Dropdown menu under hamburger icon */}
         {showDropdown && (
-          <div className="absolute top-[4.5rem]  text-white rounded-md min-h-screen w-50 z-50 mt-19 bg-black">
+          <div className="absolute top-[4.5rem]  text-white rounded-md min-h-screen w-50 z-50 mt-10 bg-black">
             <Menu_List items={menuItems} />
            
           </div>
