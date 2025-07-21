@@ -5,6 +5,8 @@ import Header from './Components/Header';
 import Body from './Components/Body.Jsx';
 import {Provider} from 'react-redux'
 import store from '../src/utils/store'
+import "./scrollbar.css";
+
 
 
 const App_Layout = () => {

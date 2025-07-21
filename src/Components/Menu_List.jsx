@@ -15,14 +15,11 @@ const Menu_List = ({ items }) => {
 
   return (
     <motion.div
-      initial={{ x: 6, opacity: 0.7 }}
-      animate={{ x: 10, opacity: 4 }}
+      initial={{ x: 2, opacity: 0.7 }}
       transition={{ duration: 0.9 }}
       onMouseEnter={() => setappear(true)}
       onMouseLeave={() => setappear(false)}
-      className={`w-65 h-[80vh] p-4 bg-transparent ${
-        appear ? "overflow-y-auto" : "overflow-hidden"
-      }`}
+      className={`w-55 h-[80vh]  bg-black ${appear ? "overflow-y-auto overflow-x-auto custom-scroll" : "overflow-hidden"}`}
     >
       <ul className="flex flex-col space-y-2">
         {/* Section 1: Home Section */}
@@ -34,7 +31,7 @@ const Menu_List = ({ items }) => {
             <img
               src={item.logo}
               alt={`${item.name}-icon`}
-              className="w-6 h-6"
+              className="w-6 h-6 "
             />
             <span>{item.name}</span>
           </li>

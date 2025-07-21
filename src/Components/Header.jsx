@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Search, Menu, Mic, Bell, PlusIcon } from "lucide-react";
-import Youtube_icon from "../../src/assets/Youtube_icon.webp";
+import Youtube_icon from "../../src/assets/Youtube_icon.png";
 import my_image from "../../src/assets/my_image.PNG";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
@@ -73,18 +73,18 @@ const Header = () => {
   };
 
   return (
-    <div className="relative grid grid-flow-col justify-between items-center bg-black">
+    <div className="relative grid grid-flow-col justify-between items-center bg-black  p-6">
       <div className="flex items-center space-x-1 relative">
         <Menu
           onClick={toggleMenuHandler}
           size={45}
           color="gray"
-          className="cursor-pointer hover:bg-[#27272a] rounded-full py-2 ml-8"
+          className="cursor-pointer hover:bg-[#27272a] rounded-full py-2 "
         />
 
         {/*Dropdown menu under hamburger icon */}
         {showDropdown && (
-          <div className="absolute top-[4.5rem]  text-white rounded-md min-h-screen w-50 z-50 mt-10 bg-black">
+          <div className="absolute top-[5.7rem] left-[-1rem] text-white rounded-md min-h-screen z-auto bg-black">
             <Menu_List items={menuItems} />
            
           </div>
@@ -93,28 +93,28 @@ const Header = () => {
         <img
           src={Youtube_icon}
           alt="youtube-icon"
-          className="h-[7.5rem] w-24 cursor-pointer"
+          className="h-10 w-15 cursor-pointer"
         />
       </div>
 
       <div className="flex items-center">
-        <div className="border-1 w-[38rem] rounded-l-full flex justify-between px-3 py-3 border-[#27272a]">
+        <div className="border-1 w-[38rem] rounded-l-full flex justify-between p-5 py-2 border-[#27272a]">
           <input
             type="text"
             placeholder="Search"
             className="border-none outline-none w-[40rem] text-white bg-black"
           />
         </div>
-        <button className="bg-[#27272a] cursor-pointer rounded-r-full py-3 px-7">
+        <button className="bg-[#27272a] cursor-pointer rounded-r-full py-2  px-7">
           <Search size={26} color="white" />
         </button>
-        <button className="ml-4 rounded-full p-3 bg-[#27272a] hover:bg-[#404040] cursor-pointer">
-          <Mic size={28} color="white" />
+        <button className="ml-4 rounded-full p-2 bg-[#27272a] hover:bg-[#404040] cursor-pointer">
+          <Mic size={26} color="white" />
         </button>
       </div>
 
-      <div className="flex items-center space-x-5 mr-8">
-        <div className="space-x-2 flex items-center text-white cursor-pointer bg-[#27272a] hover:bg-[#404040] py-3 px-4 rounded-full text-center">
+      <div className="flex items-center space-x-5">
+        <div className="space-x-2 flex items-center text-white cursor-pointer bg-[#27272a] hover:bg-[#404040] py-2 px-3 rounded-full text-center">
           <PlusIcon />
           <span className="text-xl">Create</span>
         </div>
