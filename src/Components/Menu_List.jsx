@@ -22,6 +22,7 @@ const Menu_List = ({ items }) => {
       className={`w-55 h-[80vh]  bg-black ${appear ? "overflow-y-auto overflow-x-auto custom-scroll" : "overflow-hidden"}`}
     >
       <ul className="flex flex-col space-y-2">
+         
         {/* Section 1: Home Section */}
         {homeSection.map((item, index) => (
           <li
@@ -96,6 +97,7 @@ const Menu_List = ({ items }) => {
             <span>{item.name}</span>
           </li>
         ))}
+        
         {/* Divider: More from YouTube */}
         <hr className="border-[#27272a] my-3" />
         <span className="text-md text-white px-4 py-2 font-semibold hover:bg-[#27272a] rounded-xl cursor-pointer">
