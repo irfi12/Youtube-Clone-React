@@ -102,8 +102,10 @@ const Menu_List = ({ items }) => {
         <hr className="border-[#27272a] my-3" />
         <span className="text-md text-white px-4 py-2 font-semibold hover:bg-[#27272a] rounded-xl cursor-pointer">
           More from YouTube
-        </span>
+        </span> 
 
+
+[/**map function */]
         {youtubesection.map((item, index) => (
           <li
             key={index + 16}
