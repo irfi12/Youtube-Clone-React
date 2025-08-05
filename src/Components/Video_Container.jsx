@@ -20,6 +20,7 @@ const Video_Container = () => {
 
   return (
     <div className='flex gap-4 flex-wrap'>
+      {/* map function is added  */}
       {filteredVideos.map((video) => (
         <Link key={video.id} to={'/watch?v=' + video.id}>
           <Video_cards info={video} />
